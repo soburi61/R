@@ -1,6 +1,5 @@
 # データの設定
 data <- c(4681, 8025, 7659, 7388, 6973, 7245, 6332)
-
 mean_value <- mean(data)
 print(paste("平均値:", mean(data)))
 
