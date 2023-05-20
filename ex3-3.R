@@ -6,7 +6,7 @@ y <- c(65.4, 57.5, 61.2, 67.8, 74.3, 73.6, 70.8, 58.3, 65.4, 62.1, 61.9, 63.4, 7
 students <- c(1:15)
 
 #グラフの作成
-plot(x, y, pch = students, col = students, xlab = "身長", ylab = "体重", main = "身長と体重の散布図と回帰直線", yaxp=c(50, 90, 20))
+plot(x, y, pch = students, col = students, xlab = "身長[cm]", ylab = "体重[kg]", main = "身長と体重の散布図と回帰直線", yaxp=c(50, 90, 20))
 
 #回帰直線の追加
 fit <- lm(y ~ x)
