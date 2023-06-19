@@ -4,10 +4,14 @@ z <- d$shincho
 x1 <- d$taiju
 x2 <- d$kyoui
 rg <- lm(z ~ x1 + x2)
-#rg <- lm(z ~ x1 + x2 + x1*x2)
+
 # 結果の要約と決定係数の表示
+print("単回帰")
+print(summary(lm(z ~ x1)))
+print("------")
 print("相互作用なし")
 print(summary(rg))
+print("------")
 print("相互作用あり")
 print(summary(lm(z ~ x1 + x2 + x1 * x2)))
 

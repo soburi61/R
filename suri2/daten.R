@@ -1,9 +1,9 @@
-data <- read.csv("yakyu.csv")
-y <- data$daten
-x1 <- data$anda
-x2 <- data$homerun
-x3 <- data$sanshin
-x4 <- data$gida
+d <- read.csv("daten.csv")
+y <- d$daten
+x1 <- d$anda
+x2 <- d$tanda
+x3 <- d$dasu
+x4 <- d$tokuten
 df <- data.frame(x1, x2, x3, x4)
 r1 <- lm(y ~ ., data = df)
 summary(r1)
