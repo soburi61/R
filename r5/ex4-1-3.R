@@ -1,0 +1,22 @@
+p<-0.125
+t1<-qt(p,10)
+t2<-qt(1-p,10)
+par(mai = c(1,1,1,1))
+x<-seq(-4,4,0.1)
+curve(dt(x,10),-4,4,col="blue",main="t分布のグラフ",lty=1)
+subset_x <- x[x <= t1 | x >= t2]
+subset_y <- dt(x,10)[x <= t1 | x >= t2]
+lines(subset_x, subset_y, type = "h", col = "cyan", lwd = 2)
+par(new=T)
+plot(x,pt(x,10),axes=F,type="l",col="red",ylim=c(0,1),lwd=2,xlab="",ylab="",lty=2)
+axis(4)
+mtext("分布関数",side=4,line=3)
+abline(v=t2, col="orange")
+abline(v=t1,col="orange")
+abline(h=0,col="orange")
+labels<-c("dt","pt")
+cols<-c("blue","red")
+lts<-c(1,2)
+legend("topright",legend=labels, col=cols,lty=lts)
+print(paste("t1=",t1))
+print(paste("t2=",t2))
