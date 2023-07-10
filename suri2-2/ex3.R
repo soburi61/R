@@ -2,7 +2,7 @@
 num_randoms <- 10000
 num_groups <- 100
 
-# 0～1の範囲の一様乱数を生成し、組に分ける
+# 0～1の範囲の一様乱数を生成し組に分ける
 randoms <- runif(num_randoms)
 grouped_randoms <- matrix(randoms, nrow = num_groups)
 

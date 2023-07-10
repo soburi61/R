@@ -10,7 +10,7 @@ num_trials <- 100
 # 平均値の誤差を格納するベクトル
 errors <- numeric(num_trials)
 
-# 復元抽出を繰り返し行い、平均値の誤差を計算する
+# 復元抽出を繰り返し行い,平均値の誤差を計算する
 for (i in 1:num_trials) {
   samples <- sample(1:num_faces, i*100, replace = TRUE)
   sample_mean <- mean(samples)
