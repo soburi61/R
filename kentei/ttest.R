@@ -1,9 +1,9 @@
-#サンプル平均: 92.5秒
-#帰無仮説の母平均: 93.0秒
-#サンプルの標準偏差: 1.0秒
-#サンプルサイズ: 26
-#有意水準: 5%
-#検定の種類: 二尾検定（0）
+#サンプル平均: avr
+#帰無仮説の母平均: myu
+#サンプルの標準偏差: u
+#サンプルサイズ: n
+#有意水準: alfa
+#検定の種類: side 0のとき両側
 
 ttest<-function(avr,myu,u,n,alfa,side)
 {
@@ -24,11 +24,11 @@ ttest<-function(avr,myu,u,n,alfa,side)
 #関数化
 #avr サンプルの平均
 #myu 母平均 本来の平均
-#sgm 母集団の標準偏差
+#sgm 母集団の標準偏差 母分散はこれからわかる
 #n サンプルサイズ
 #alfa 有意水準
 #side 1のとき右側検定 0のとき両側
-ztest<-function(avr,myu,sgm,n,alfa,side)
+ztest1<-function(avr,myu,sgm,n,alfa,side)
 {
   z<-abs(sqrt(n)*(avr-myu)/sgm)  #検定統計量
   pr<-1-pnorm(z)
@@ -40,7 +40,7 @@ ztest<-function(avr,myu,sgm,n,alfa,side)
 }
 
 #母比率の検定
-ztest1<-function(z,alfa,side)
+ztest<-function(z,alfa,side)
 {
   pr<-1-pnorm(abs(z))
   if(side==0) pr<-2*pr           #両側検定
@@ -51,11 +51,11 @@ ztest1<-function(z,alfa,side)
 }
 #　母比率の検定
 #問２・３・３
-#n<-100
-#p<-68/n
-#p0<-1/2
-#z<-sqrt(n)*(p-p0)/sqrt(p0*(1-p0))
-#ztest1(z,0.05,0)
+n<-100
+p<-68/n
+p0<-1/2
+z<-sqrt(n)*(p-p0)/sqrt(p0*(1-p0))
+print(ztest(z,0.05,0))
 
 ftest<-function(u1,u2,n1,n2,alfa,side)
 {
