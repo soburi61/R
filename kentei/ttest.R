@@ -49,13 +49,7 @@ ztest<-function(z,alfa,side)
     print(kekka)
     return(pr)
 }
-#　母比率の検定
-#問２・３・３
-n<-100
-p<-68/n
-p0<-1/2
-z<-sqrt(n)*(p-p0)/sqrt(p0*(1-p0))
-print(ztest(z,0.05,0))
+
 
 ftest<-function(u1,u2,n1,n2,alfa,side)
 {
@@ -69,3 +63,11 @@ ftest<-function(u1,u2,n1,n2,alfa,side)
   
   return(list(f,pr))
 }
+
+#a<-c(285,306,278,293,315)
+#b<-c(312,285,279,312,268,285)
+#u1<-var(a); u2<-var(b)
+#n1<-length(a) ; n2<-length(b)
+#ftest(u1,u2,n1,n2,0.05,0)
+#t.test(a,b,paired=F,var.equal=T)
+
